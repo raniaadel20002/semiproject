@@ -1,4 +1,23 @@
 {
+  "name": "semiproject",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/raniaadel20002/semiproject#readme",
+  "bugs": {
+    "url": "https://github.com/raniaadel20002/semiproject/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raniaadel20002/semiproject.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon endpoint.js"
+  },
   "dependencies": {
     "bcrypt": "^6.0.0",
     "dotenv": "^17.2.1",
@@ -8,5 +27,6 @@
     "nodemon": "^3.1.10",
     "path": "^0.12.7",
     "uuid": "^11.1.0"
-  }
+  },
+  "devDependencies": {}
 }

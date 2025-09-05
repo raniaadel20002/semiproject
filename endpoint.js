@@ -1,7 +1,47 @@
-
-
+const { app } = require(".")
+const { homepage } = require("./controllers/homepagecont")
+const { register } = require("./controllers/registercont")
+const { start } = require("./controllers/startcont")
+const { verify } = require("./controllers/verifycont")  
+const { forgetpassword } = require("./controllers/forgetpasswordcont")
+const { resetpassword } = require("./controllers/resetpasswordcont")    
+const { logout } = require("./controllers/logoutcont")
+const { category } = require("./controllers/categorycont")
+const { addCategory } = require("./controllers/addcategorycont")
+const { deleteCategoryByid } = require("./controllers/deletecategorybyidcont")
+const { note } = require("./controllers/notecont")
+const { notebyid } = require("./controllers/notebyidcont")
+const { addnote } = require("./controllers/addnotecont")    
+const { updatenotebyid } = require("./controllers/updatenotebyidcont")
+const { deletenotebyid } = require("./controllers/deletenotebyidcont")
+const { profile } = require("./controllers/profilecont")
+const { changepassword } = require("./controllers/changepasswordcont")
+const { changeprofilename } = require("./controllers/changeprofilenamecont")    
+const { profileenapleotp } = require("./controllers/profileenapleotpcont")
 
 
 
 
 app.get('/homepage',homepage)
+app.post('/register',register)
+app.post('/start',start)
+app.post('/verify',verify)
+app.post('forgetpassword',forgetpassword)
+app.post('/resetpassword',resetpassword)
+app.post('/logout',logout) 
+app.get('/category',category)
+app.post('/addcategory',addCategory)
+app.delete('/deletecategorybyid',deleteCategoryByid) 
+app.get('/note',note)
+app.get('/notebyid',notebyid)
+app.post('/addnote',addnote)
+app.put('/updatenotebyid',updatenotebyid)
+app.patch('/updatenotebyid',updatenotebyid)
+app.delete('/deletenotebyid',deletenotebyid)
+app.get('/profile',profile)
+app.post('/changepassword',changepassword)
+app.post('/changeprofilename',changeprofilename)
+app.post('/profileenapleotp',profileenapleotp)
+
+
+
