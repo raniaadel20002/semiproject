@@ -1,6 +1,6 @@
 const mangoose = require('mongoose');
 
-const categorySchema = new mangoose.Schema({
+const category = new mangoose.Schema({
     name: {
         type: String,
         required: true,
@@ -16,4 +16,5 @@ const categorySchema = new mangoose.Schema({
     },
 });
 
-module.exports = mangoose.model('Category', categorySchema);
+const categoryData = mangoose.model('Category', category);
+module.exports = {categoryData};

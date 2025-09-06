@@ -1,7 +1,7 @@
 const mangoose = require('mongoose');
 
 
-const noteSchema = new mangoose.Schema({
+const note = new mangoose.Schema({
     title: {
         type: String,
         required: true,
@@ -21,7 +21,10 @@ const noteSchema = new mangoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now,
+
     },
 });
 
-module.exports = mangoose.model('Note', noteSchema);
+const noteData = mangoose.model('Note', note);
+
+module.exports = {noteData};

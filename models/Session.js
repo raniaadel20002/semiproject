@@ -1,6 +1,6 @@
 const mangoose = require('mongoose');
 
-const sessionSchema = new mangoose.Schema({
+const session = new mangoose.Schema({
     username: {
         type: String,
         required: true,
@@ -17,7 +17,10 @@ const sessionSchema = new mangoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now,
+        expires: '30s'
     },
 });
 
-module.exports = mangoose.model('Session', sessionSchema);
+const sessionData = mangoose.model('Session', session);
+
+module.exports = {sessionData};

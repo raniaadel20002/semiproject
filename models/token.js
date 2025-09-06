@@ -12,7 +12,10 @@ const tokenSchema = new moongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now,
+        expires: '30s'
     },
 });
 
-module.exports = moongoose.model('Token', tokenSchema);
+const tokenData = moongoose.model('Token', tokenSchema);
+
+module.exports = {tokenData};

@@ -1,6 +1,6 @@
 const moongoose = require('mongoose');
 
-const otpSchema = new moongoose.Schema({
+const otp = new moongoose.Schema({
     email: {
         type: String,
         required: true,
@@ -12,7 +12,10 @@ const otpSchema = new moongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now,
+        expires: 300
     },
 });
 
-module.exports = moongoose.model('Otp', otpSchema);
+const otpData = moongoose.model('Otp', otp);
+
+module.exports = {otpData};

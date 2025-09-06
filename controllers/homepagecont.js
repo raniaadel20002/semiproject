@@ -1,15 +1,25 @@
-const User = require('../models/users');
-const Note = require('../models/Note');
-const Category = require('../models/Category');
+const { userData } = require('../models/users');
+const { noteData } = require('../models/Note');
+const { categoryData } = require('../models/Category');
 
 
-const gethomepage = async(req, res) => {
+const homepage = async (req, res) => {
     try {
-        
-        const user = User.find();
-        const note = Note.find();
-        const category = Category.find();
-    } catch (error) {
-        console.log(error);
+        const user = userData.find();
+        const note = noteData.find();
+        const category = categoryData.find();
+        if (!username || !email || !password) {
+            res.status(400).json({ message: 'All fields are required' });
+        } else if (user || password !== userData) {
+            res.json({ message: 'User or password not found' });
+        } else if (user===userData && password===userData) {
+            res.status(200).json({ user, note, category });
+        } else if (!note || !category) {
+            res.status(404).json({ message: "Not Found" });
+        }
+        } catch (error) {
+            console.log(error);
+        }
     }
-}
+
+module.exports = { homepage }
