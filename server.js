@@ -1,21 +1,26 @@
-const { app } = require(".")
+const { app } = require("./bootstrap")
+//home page routes
 const { homepage } = require("./controllers/homepagecont")
+//auth routes
 const { register } = require("./controllers/registercont")
 const { start } = require("./controllers/startcont")
 const { verify } = require("./controllers/verifycont")  
 const { forgetpassword } = require("./controllers/forgetpasswordcont")
 const { resetpassword } = require("./controllers/resetpasswordcont")    
 const { logout } = require("./controllers/logoutcont")
+//category routes
 const { category } = require("./controllers/categorycont")
 const { addCategory } = require("./controllers/addcategorycont")
 const { deleteCategoryByid } = require("./controllers/deletecategorybyidcont")
+//note routes
 const { note } = require("./controllers/notecont")
 const { notebyid } = require("./controllers/notebyidcont")
 const { addnote } = require("./controllers/addnotecont")    
 const { updatenotebyid } = require("./controllers/updatenotebyidcont")
 const { deletenotebyid } = require("./controllers/deletenotebyidcont")
+//profile routes
 const { profile } = require("./controllers/profilecont")
-const { changepassword } = require("./controllers/changepasswordcont")
+const { changeprofilepassword } = require("./controllers/changepasswordcont")
 const { changeprofilename } = require("./controllers/changeprofilenamecont")    
 const { profileenapleotp } = require("./controllers/profileenapleotpcont")
 
@@ -39,7 +44,7 @@ app.put('/updatenotebyid',updatenotebyid)
 app.patch('/updatenotebyid',updatenotebyid)
 app.delete('/deletenotebyid',deletenotebyid)
 app.get('/profile',profile)
-app.post('/changepassword',changepassword)
+app.post('/changeprofilepassword',changeprofilepassword)
 app.post('/changeprofilename',changeprofilename)
 app.post('/profileenapleotp',profileenapleotp)
 
